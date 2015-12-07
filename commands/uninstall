@@ -39,8 +39,8 @@ if ask "Are you sure you want to completely remove Cri, xiwi, and crouton?"; the
     cd $CBIN #Deletes our bin files
     sudo rm -f $(cat /home/chronos/user/Downloads/.tmp/commands.txt | sed 's/.*\///g')
     
-    cd /usr/bin #Reinstalls a fresh version of Crosh
-    sudo wget -q -O - https://raw.github.com/CodeBuds/Cri/master/Crosh > crosh
+    cd /usr/bin #Restores original copy of Crosh
+    mv .crosh_backup crosh
     chmod 755 crosh
 fi
 unset CBIN 
